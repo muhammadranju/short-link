@@ -8,7 +8,10 @@ const middlewares = [morgan("dev")];
 app.use(middlewares);
 
 app.get("/", (req, res) => {
-    res.redirect("https://google.com/muhammadranju");
+    res.redirect("/home");
+});
+app.get("/home", (req, res) => {
+    res.status(200).json({ message: "Hello real app" });
 });
 
 app.listen(PORT, () => {
