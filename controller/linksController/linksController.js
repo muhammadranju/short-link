@@ -15,9 +15,9 @@ const liveGetController = (req, res) => {
     return res.status(200).send(`<h1>Hello Bor...!</h1>
     <p>Your URL is <strong>${
         req.originalUrl
-    }</strong>,Now you type your url end of ${
+    }</strong>,Now you type your url end of <strong>(${
         req.hostname + req.originalUrl
-    }/</p>
+    })</strong>/</p>
     `);
 };
 
