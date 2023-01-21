@@ -1,12 +1,5 @@
+const os = require("os");
 const baseURL = `https://thebestdate.life/?u=568k60a&o=g1bpe97&t=`;
-const demoGetURlController = (req, res) => {
-    try {
-        const demo = baseURL + req.params.query_parameters;
-        return res.status(200).send(demo);
-    } catch (error) {
-        console.log(error);
-    }
-};
 
 const liveGetURLController = (req, res) => {
     try {
@@ -17,18 +10,18 @@ const liveGetURLController = (req, res) => {
         console.log(error);
     }
 };
-const liveGetController = (_req, res) => {
-    // return res.status(200).send("Hello demo");
-    return res.status(200).redirect(`/demo`);
-};
-const demoGetController = (_req, res) => {
-    // return res.status(200).redirect(`/demo`);
-    return res.status(200).send(`Hello from `);
+const liveGetController = (req, res) => {
+    console.log(req.hostname);
+    return res.status(200).send(`<h1>Hello Bor...!</h1>
+    <p>Your URL is <strong>${
+        req.originalUrl
+    }</strong>,Now you type your url end of ${
+        req.hostname + req.originalUrl
+    }/</p>
+    `);
 };
 
 module.exports = {
-    demoGetURlController,
     liveGetURLController,
     liveGetController,
-    demoGetController,
 };
