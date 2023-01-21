@@ -12,7 +12,7 @@ const liveGetURLController = (req, res) => {
     try {
         const urlLink = baseURL + req.params.query_parameters;
         // res.redirect(link);
-        return res.status(200).send(urlLink);
+        return res.status(200).send(`<h1>${urlLink}</h1>`);
     } catch (error) {
         console.log(error);
     }
